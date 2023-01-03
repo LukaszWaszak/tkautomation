@@ -1,0 +1,224 @@
+.pageNav {
+  $p: &;
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  box-shadow: $b-sh-gray;
+  background-color: $c-white;
+  transition: transform $trM;
+
+  &__logo {
+    max-width: 110px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 8px;
+    border-radius: 0 0.8rem 0.8rem 0;
+    background: $c-purple-1;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+
+
+
+    &Links {
+      display: flex;
+      align-items: center;
+    }
+
+    &Link {
+      margin-right: #{$grid-gap}px;
+      color: $c-black;
+
+      &--desktop {
+        display: none;
+
+        @include rwd('large-tablet') {
+          display: block;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &--active {
+        font-weight: $fw-bold;
+      }
+    }
+
+    .pageNav__navInner {
+      @include rwd('large-tablet', false) {
+        display: none;
+      }
+    }
+  }
+
+
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include rwd('tablet') {
+      flex-wrap: nowrap;
+    }
+
+    @include rwd('large-tablet') {
+      padding: 1.5rem 0;
+    }
+
+    @include rwd('large-tablet') {
+      display: none;
+    }
+  }
+
+  &__nav {
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    padding-right: gridPart(0, 0, 1, gridBase(12, 11, 4));
+    padding-left: gridPart(0, 0, 1, gridBase(12, 11, 4));
+    background-color: $c-white;
+    transition: padding $trM;
+    display: none;
+
+    &.active {
+      display: flex;
+      padding: 0px 0px 4rem;
+      padding-right: gridPart(0, 0, 1, gridBase(12, 11, 4));
+    }
+
+    @include rwd('large-tablet') {
+      position: static;
+      flex-grow: 1;
+      padding: 0;
+      max-width: gridPart(7, 6, 0);
+    }
+
+    &Inner {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      opacity: 0;
+      transition: max-height $trM, opacity $trM;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $c-prim-1;
+        border-radius: .8rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $c-white;
+      }
+
+      #{$p}__nav.active & {
+        max-height: 40vh;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      @include rwd('large-tablet') {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        visibility: visible;
+        opacity: 1;
+        max-height: unset;
+      }
+
+      @include rwd('large-laptop') {
+        overflow: unset;
+      }
+
+      @include rwd('ultra') {
+        max-width: gridPart(8, 7, 0);
+      }
+
+      @include rwd('large-tablet', false) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &Item {
+      color: $c-black;
+      margin-right: 2rem;
+      flex-shrink: 0;
+      padding: 1rem 0;
+
+      @include rwd('large-tablet') {
+        padding: 0;
+      }
+
+      &--mobile {
+        display: block;
+
+        @include rwd('large-tablet') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include rwd('tablet') {
+      flex-wrap: nowrap;
+    }
+
+    &--mobile {
+      display: flex;
+
+      @include rwd('large-tablet') {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include rwd('large-tablet') {
+        display: flex;
+      }
+    }
+  }
+
+  &__button {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include rwd('large-laptop') {
+      margin-right: #{$grid-gap}px;
+    }
+  }
+
+  &__toggle {
+    @include rwd('large-tablet') {
+      display: none;
+    }
+  }
+}

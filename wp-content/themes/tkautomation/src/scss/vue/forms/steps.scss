@@ -1,0 +1,129 @@
+.steps {
+  $p: &;
+  display: flex;
+  overflow: auto;
+
+  &__step {
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding-right: 1.6rem;
+  }
+
+  &__indicator {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid $c-gray-2;
+    margin-right: 1.6rem;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+    }
+
+    #{$p}__step.active & {
+      border: 2px solid $c-prim-1;
+
+      &::after {
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $c-prim-1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    #{$p}__step.passed & {
+      border: 2px solid $c-purple-1;
+      background-color: $c-purple-1;
+
+      &::after {
+        content: '\e90b';
+        z-index: 2;
+        color: $c-white;
+        font-size: 1.6rem;
+        font-family: 'icomoon';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+  }
+
+  &__index {
+    color: $c-gray-2;
+    font-weight: $fw-light;
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  &__name {
+    font-weight: $fw-light;
+    color: $c-gray-2;
+
+    #{$p}__step.passed &,
+    #{$p}__step.active & {
+      color: $c-black;
+    }
+  }
+
+  &__progress {
+    position: relative;
+    flex-grow: 1;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      transform: translateY(-50%);
+      transition: width $trM, background-color $trM, transform $trM;
+    }
+
+    &::before {
+      width: 100%;
+      background-color: $c-gray-2;
+    }
+
+    #{$p}__step.active & {
+      &::after {
+        width: 50%;
+        background-color: $c-prim-1;
+      }
+    }
+
+    #{$p}__step.passed & {
+      &::after {
+        width: 100%;
+        background-color: $c-purple-1;
+      }
+    }
+
+    #{$p}__step:last-child & {
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__selection {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .5rem 1.6rem;
+    border-radius: .8rem;
+    background-color: $c-purple-1;
+    color: $c-white;
+  }
+}

@@ -1,0 +1,64 @@
+.articleHero {
+  $p: &;
+  position: relative;
+  padding-bottom: 0;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__publishDate {
+    font-weight: $fw-light;
+    color: $c-purple-1;
+    margin-bottom: 1rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: -.5rem -2rem;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    margin: -.4rem;
+
+    &Label,
+    &Value {
+      padding: .4rem;
+    }
+
+    &Value {
+      color: $c-black;
+    }
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 59%;
+    margin-top: 4rem;
+
+    &Inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        border-radius: .8rem;
+      }
+    }
+  }
+}

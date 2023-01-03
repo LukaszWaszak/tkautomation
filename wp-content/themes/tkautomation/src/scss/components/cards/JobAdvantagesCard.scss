@@ -1,0 +1,36 @@
+.jobAdvantagesCard{
+
+padding-top: 40px;
+
+&__inner{
+display: grid;
+@include rwd('large-tablet'){
+  grid-template-columns: 1fr 4fr
+}
+}
+
+  &__icon{
+    max-width: 80px;
+    width: 100%;
+    @include rwd('large-tablet', false){
+      padding-bottom: 20px;
+    }
+  }
+
+
+  &__text{
+@include rwd('large-tablet'){
+  width: 80%;
+}  
+  h4{
+    color: #6D40FE;
+  }
+    p{
+      line-height: 2.8rem;
+      font-weight: 300;
+    }
+
+  }
+
+
+}

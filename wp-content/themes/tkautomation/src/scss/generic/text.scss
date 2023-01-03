@@ -1,0 +1,89 @@
+.text {
+  $p: &;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--regular {
+    font-weight: $fw-regular;
+  }
+
+  &--bold {
+    font-weight: $fw-bold;
+  }
+
+  &--textEditor {
+    p {
+      margin: 2rem 0 0 0;
+
+      @include rwd('large-tablet') {
+        margin: 3rem 0 0 0;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 5rem 0 0 0;
+
+      @include rwd('large-tablet') {
+        margin: 8rem 0 0 0;
+      }
+    }
+  }
+
+  &__head {
+    margin-bottom: 1rem;
+
+    #{$p}:not(#{$p}--ignoreIntersect) & {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: opacity $trM, visibility $trM, transform $trM;
+
+      #{$page-section}--visible & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    @include rwd('laptop') {
+      margin-bottom: 2rem;
+    }
+
+    &--large {
+      font-size: 5rem;
+
+      @include rwd('tablet') {
+        font-size: 6rem;
+      }
+
+      @include rwd('large-tablet') {
+        font-size: 7rem;
+      }
+
+      @include rwd('laptop') {
+        font-size: 9rem;
+      }
+
+      @include rwd('ultra') {
+        font-size: 12rem;
+      }
+    }
+  }
+
+  &__content {
+    #{$p}:not(#{$p}--ignoreIntersect) & {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: opacity $trM $tr, visibility $trM $tr, transform $trM $tr;
+
+      #{$page-section}--visible & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+  }
+}

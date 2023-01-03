@@ -1,0 +1,22 @@
+.speakersList {
+  $p: &;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem;
+
+  @include rwd('small-tablet') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+  }
+
+  #{$speakersSection}--vertical & {
+    @include rwd('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+
+  }
+}

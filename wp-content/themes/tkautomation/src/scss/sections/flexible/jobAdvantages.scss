@@ -1,0 +1,34 @@
+.jobAdvantages{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+align-items: center;
+background-color: #F4F5F9;
+&__wrapper{
+
+}
+
+
+&__header{
+  h4{
+    text-align: center;
+    color: black;
+  }
+}
+
+
+
+&__tiles{
+  display: grid;
+  gap: 10px;
+
+@include rwd('small-tablet'){
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+}
+}
+
+
+
+}

@@ -1,0 +1,53 @@
+.partners {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: grid;
+    justify-items: center;
+
+    @include rwd('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__list {
+    width: 100%;
+
+    &:last-child {
+      margin-top: 3rem;
+
+      @include rwd('tablet') {
+        margin-top: 0;
+      }
+    }
+
+    @include rwd('tablet') {
+      padding: 0 3rem;
+
+      &:first-child {
+        border-right: 2px solid $c-gray-2;
+      }
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__logos {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+
+    @include rwd('large-phone') {
+      margin-top: 3rem;
+      gap: 2.4rem 1.6rem;
+    }
+
+    @include rwd('tablet') {
+      gap: 3.2rem 2.4rem;
+    }
+  }
+}

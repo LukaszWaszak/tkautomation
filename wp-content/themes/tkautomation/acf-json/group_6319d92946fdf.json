@@ -1,0 +1,282 @@
+{
+    "key": "group_6319d92946fdf",
+    "title": "Hero",
+    "fields": [
+        {
+            "key": "field_633aa95dfa925",
+            "label": "Active",
+            "name": "hero_active",
+            "type": "true_false",
+            "instructions": "Proszę określić czy sekcja hero ma być aktywna na danej stronie",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6332c46510595",
+            "label": "Variant",
+            "name": "hero_variant",
+            "type": "select",
+            "instructions": "Proszę wybrać wariant sekcji.\r\nDefault: Standardowa sekcja hero\r\nSmall: sekcja hero z mniejszymi rozmiarami czcionek oraz buttonów i zdjęcia.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "small": "Small"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6319d92eb823f",
+            "label": "Header",
+            "name": "hero_header",
+            "type": "text",
+            "instructions": "Proszę wpisać nagłówek sekcji",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6332c913a640f",
+            "label": "Subtitle",
+            "name": "hero_subtitle",
+            "type": "text",
+            "instructions": "Proszę wpisać tekst, który znajdzie się bezpośrednio pod nagłówkiem",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6319d9a5b8240",
+            "label": "Text",
+            "name": "hero_text",
+            "type": "text",
+            "instructions": "Proszę wpisać tekst pod nagłówkiem",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6319db56b8241",
+            "label": "Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6319db6bb8242",
+            "label": "Buttons",
+            "name": "hero_buttons",
+            "type": "repeater",
+            "instructions": "Proszę dodać przyciski pod tekstem",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_633aa95dfa925",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6319db7db8243",
+                    "label": "Button",
+                    "name": "button",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6319dba9b8244",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "Proszę wpisać tekst przycisku",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6319dbceb8245",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "Proszę podać dokąd kierować ma przycisk",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/pageFront.php"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/pageFaq.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1666075862
+}

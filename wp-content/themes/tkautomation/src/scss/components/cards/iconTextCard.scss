@@ -1,0 +1,59 @@
+.iconTextCard {
+  $p: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  box-shadow: $b-sh-gray-light;
+  color: $c-black;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity $trM, transform $trM;
+
+  #{$intersect} & {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__icon,
+  &__title {
+    margin-bottom: .8rem;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $c-prim-1;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    @include rwd('large-tablet') {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+
+    @include rwd('large-laptop') {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    img {
+      max-width: 50%;
+
+      @include rwd('large-tablet') {
+        max-width: 60%;
+      }
+
+      @include rwd('large-laptop') {
+        max-width: 80%;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: $fw-medium;
+  }
+}

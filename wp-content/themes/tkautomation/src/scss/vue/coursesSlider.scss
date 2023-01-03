@@ -1,0 +1,90 @@
+.coursesSlider {
+  $p: &;
+  position: relative;
+
+  &__categories {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__category {
+    margin-right: 2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+
+    @include rwd('large-tablet') {
+      width: gridPart(12, 11, 0.75);
+    }
+
+    @include rwd('ultra') {
+      width: gridPart(12, 11, 1);
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    padding: 3rem 0;
+  }
+
+  &__item {
+    height: auto;
+    margin-right: 1.6rem;
+    width: gridPart(9, 8, 0);
+
+    @include rwd('small-tablet') {
+      width: gridPart(5, 4, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(4, 2, 0, gridBase(12, 11, 0.75));
+    }
+
+    @include rwd('laptop') {
+      width: gridPart(3, 2, 0, gridBase(12, 11, 0.75));
+    }
+
+    @include rwd('ultra') {
+      width: gridPart(3, 2, 0, gridBase(12, 11, 1));
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -1rem 0;
+
+    @include rwd('small-tablet') {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    &Button {
+      margin-right: 1.6rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__more,
+  &__nav {
+    margin: 1rem 0;
+
+    @include rwd('small-tablet') {
+      margin: 0;
+    }
+  }
+}

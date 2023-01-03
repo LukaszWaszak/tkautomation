@@ -1,0 +1,90 @@
+.speakerCard {
+  $p: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: .8rem;
+  background-color: $c-white;
+  filter: drop-shadow(0 16px 16px $d-sh-gray);
+  opacity: 0;
+  transition: opacity $trM;
+
+  #{$intersect} & {
+    opacity: 1;
+  }
+
+  &__status {
+    position: absolute;
+    z-index: 2;
+    top: 1.6rem;
+    left: 1.6rem;
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: .8rem .8rem 0 0;
+      transition: transform $trM;
+
+      #{$p}:hover & {
+        transform: scale(1.04);
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.6rem;
+  }
+
+  &__name {
+    color: $c-black;
+  }
+
+  &__name,
+  &__description {
+    font-weight: $fw-light;
+  }
+
+  &__description {
+    margin-top: .5rem;
+  }
+
+  &__more {
+    width: 100%;
+    margin-top: 1.5rem;
+
+    & > .button {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 1.6rem;
+    color: $c-white;
+  }
+
+  &__type {
+    margin-right: .5rem;
+  }
+
+  &__country {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}

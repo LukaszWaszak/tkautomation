@@ -1,0 +1,106 @@
+$multiselectOptions: '.formMultipleSelect__options';
+
+.formMultipleSelect {
+  $p: &;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  min-width: 200px;
+
+  &__options {
+    position: relative;
+  }
+
+  &__selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    min-height: 56px;
+    border-radius: .8rem;
+    border: 1px solid $c-gray-2;
+    transition: background-color $trM, color $trM, border-color $trM, border-radius $trM;
+
+    #{$p}:hover & {
+      background-color: $c-prim-2;
+      color: $c-black;
+      border-color: $c-prim-1;
+    }
+
+    #{$multiselectOptions}.active & {
+      border-radius: .8rem .8rem 0 0;
+    }
+
+    &Icon {
+      position: relative;
+      font-size: 1.6rem;
+      color: $c-black;
+
+      span {
+        position: relative;
+        z-index: 3;
+      }
+
+      #{$p}:hover & {
+        &::after {
+          background-color: $c-prim-1;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        left: 50%;
+        background-color: $c-prim-2;
+        border-radius: .4rem;
+        transform: translate(-50%, -50%);
+        transition: background-color $trM;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    background-color: $c-white;
+    transition: opacity $trM, max-height $trM;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 999px;
+      border-radius: 0 0 .8rem .8rem;
+      border: 1px solid $c-gray-2;
+    }
+
+    &Item {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      min-height: 56px;
+      border-bottom: 1px solid $c-gray-2;
+      transition: color $trM;
+
+      &:hover {
+        color: $c-black;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__input {
+    margin-right: 1rem;
+  }
+}

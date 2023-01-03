@@ -1,0 +1,43 @@
+.relatedResources {
+  $p: &;
+  position: relative;
+  overflow: unset;
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: -.8rem;
+
+    .text {
+      &__header {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__header,
+  &__button {
+    padding: .8rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-gap: 1.6rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 3rem;
+
+    @include rwd('small-tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rwd('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include rwd('large-tablet') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

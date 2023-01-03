@@ -1,0 +1,68 @@
+.hs-form {
+  margin: -.8rem;
+
+  .hs-form-field {
+    display: inline-flex;
+    padding: .8rem;
+
+    &:not(.hs-fieldtype-booleancheckbox) {
+      label {
+        display: none;
+      }
+    }
+  }
+
+  .hs-input {
+    &:not([type="checkbox"]) {
+      width: 100%;
+      min-height: 56px;
+      border-radius: .8rem;
+      padding: 1.6rem 2.4rem;
+      font-weight: $fw-light;
+      background-color: $c-white;
+    }
+
+    &.error {
+      color: $c-red-1;
+
+      &::placeholder {
+        color: $c-red-1;
+      }
+    }
+  }
+
+  .hs-error-msgs {
+    display: none !important;
+  }
+
+  .hs-richtext,
+  .hs-submit {
+    padding: .8rem;
+  }
+
+  .hs-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    border-radius: .8rem;
+    overflow: hidden;
+    transition: background-color $trM, color $tr, box-shadow $trM;
+
+    &.primary {
+      background-color: $c-prim-1;
+      color: $c-black;
+      border: 2px solid $c-prim-1;
+
+      &::after {
+        background-color: rgba(0, 0, 0, 4%);
+      }
+
+      &:hover {
+        box-shadow: $b-sh-primary;
+      }
+    }
+  }
+}

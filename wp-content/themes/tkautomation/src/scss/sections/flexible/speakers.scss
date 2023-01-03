@@ -1,0 +1,9 @@
+.speakers {
+  $p: &;
+  position: relative;
+  overflow: unset;
+
+  &--vertical {
+    background-color: $c-gray-4;
+  }
+}

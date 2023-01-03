@@ -1,0 +1,57 @@
+.historyTile{
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F5F9;
+
+  &__wrapper{
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -3rem;
+      bottom: 3rem;
+      width: 70px;
+      height: 70px;
+     background-color: #DAD0FB;
+     border-radius: 50%;
+     top: 65%;
+     left: 15%;
+  
+      @include rwd('large-tablet'){
+        width: 120px;
+        height: 120px;
+        top: 64%;
+      left: 60%;
+      }
+      @include rwd('ultra'){
+        top: 62%;
+      left: 60%;
+      }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 70px;
+    height: 70px;
+   background-color: #FFF2B2;
+   border-radius: 50%;
+   top: 30%;
+   left: 60%;
+   @include rwd('small-tablet'){
+    top: 25%;
+    left: 67%;
+   }
+    @include rwd('large-tablet'){
+    top: 15rem;
+    left: 87%;
+    width: 120px;
+    height: 120px;
+   }
+   @include rwd('ultra'){
+    left: 90%;
+   }
+  }
+
+}
+}

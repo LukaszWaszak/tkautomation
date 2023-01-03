@@ -1,0 +1,61 @@
+.resourceGroupSlider {
+  $p: &;
+  position: relative;
+  padding: 4rem 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header {
+    color: $c-black;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin: -.8rem;
+
+    &Button {
+      padding: .8rem;
+    }
+  }
+
+  &__slider {
+    margin-top: 2rem;
+  }
+
+  &__items {
+    margin: 0 -0.8rem;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 0 0.8rem;
+    border-radius: .8rem;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    @include rwd('large-phone') {
+      width: 60%;
+    }
+
+    @include rwd('small-tablet') {
+      width: 50%;
+    }
+
+    @include rwd('tablet') {
+      width: 33%;
+    }
+
+    @include rwd('large-tablet') {
+      width: 25%;
+    }
+  }
+}

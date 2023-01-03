@@ -1,0 +1,13 @@
+.pinButton {
+  $p: &;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $c-gray-3;
+
+  &--default {
+    &#{$p}--active {
+      background-color: $c-prim-1;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.descTileCard{
+  display: flex;
+  flex-direction: column;
+align-items: flex-start;
+
+  &__title{
+    color: $c-purple-1;
+    padding-top: 20px;
+
+  }
+  &__desc{
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    
+  }
+}

@@ -1,0 +1,44 @@
+.contactMap {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__map {
+    height: 400px;
+    border-radius: .8rem;
+  }
+
+  &__data {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 1rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  &__details {
+    max-width: 300px;
+    background-color: $c-white;
+    border-radius: .8rem;
+    padding: 3rem 2.4rem;
+  }
+
+  &__title {
+    color: $c-purple-1;
+    font-weight: $fw-light;
+  }
+
+  &__address {
+    font-weight: $fw-light;
+  }
+
+  &__route {
+    margin-left: auto;
+  }
+}

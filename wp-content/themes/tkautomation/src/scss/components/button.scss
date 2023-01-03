@@ -1,0 +1,153 @@
+.button {
+  $p: &;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  border-radius: .8rem;
+  overflow: hidden;
+  transition: background-color $trM, color $tr, box-shadow $trM;
+
+  @include rwd('large-tablet') {
+    white-space: nowrap;
+  }
+
+  &:hover,
+  &.active {
+    &::after {
+      transform: translate(-50%, -30%) scale(1);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 140%;
+    padding-top: 140%;
+    top: 30%;
+    left: 50%;
+    border-radius: 50%;
+    transform-origin: 50%;
+    transform: translate(-100%, -30%) scale(0);
+    transition: transform $trM;
+  }
+
+  &--default {
+    background-color: $c-prim-1;
+    color: $c-white;
+    border: 2px solid $c-prim-1;
+
+    &::after {
+      background-color: rgba(0, 0, 0, 4%);
+    }
+
+    &:hover {
+      box-shadow: $b-sh-primary;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $c-white;
+    border: 2px solid $c-prim-1;
+
+    &:hover,
+    &.active {
+      color: $c-white;
+      box-shadow: $b-sh-gray;
+      border: 2px solid $c-purple-1;
+    }
+
+    &::after {
+      background-color: $c-purple-1;
+    }
+  }
+
+  &--purple {
+    #{$p}__icon {
+      color: $c-purple-1;
+    }
+  }
+
+  &--white {
+    background-color: $c-white;
+    color: $c-black;
+    border: 2px solid $c-white;
+
+    &:hover,
+    &.active {
+      background-color: transparent;
+      color: $c-white;
+    }
+  }
+
+  @include rwd('large-laptop') {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &--size {
+    &-medium {
+      padding: 1.6rem 2.4rem;
+    }
+
+    &-big {
+      padding: 1.4rem 3rem;
+
+      @include rwd('tablet') {
+        padding: 1.8rem 3.8rem;
+      }
+
+      @include rwd('large-laptop') {
+        padding: 2.4rem 4.8rem;
+      }
+    }
+  }
+
+  &--onlyIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+
+  &__text {
+    transition: transform $tr, color $tr;
+  }
+
+  &__icon {
+    font-size: 1.8rem;
+
+    &--before {
+      margin-right: 1rem;
+    }
+
+    &--after {
+      margin-left: 1rem;
+    }
+
+    #{$p}--onlyIcon & {
+      @include rwd('large-tablet') {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  &:disabled {
+    color: $c-black;
+    background-color: $c-gray-3;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $c-gray-4;
+    }
+  }
+}

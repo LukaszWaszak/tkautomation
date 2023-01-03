@@ -1,0 +1,60 @@
+.contactForm {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__lead {
+    width: 100%;
+
+    @include rwd('small-tablet') {
+      width: gridPart(9, 7, 0);
+    }
+
+    @include rwd('tablet') {
+      width: gridPart(5, 4, 0);
+      margin-right: gridPart(1, 2, 0);
+    }
+  }
+
+  &__header {
+    font-weight: $fw-light;
+    margin-bottom: 3rem;
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 6rem 2rem;
+    border-radius: .8rem;
+    background-color: $c-white;
+    border: 1px solid $c-gray-3;
+
+    @include rwd('tablet') {
+      width: gridPart(6, 5, 0);
+      padding: 8rem 4rem;
+      margin-top: 0;
+    }
+
+  }
+
+  .formInput {
+
+    textarea {
+      width: 100%;
+      border: 1px solid $c-gray-3;
+      padding: 1.6rem 2.4rem;
+      color: $c-gray-1;
+      font-weight: 200;
+
+      &::placeholder {
+        color: $c-gray-1;
+        font-weight: 200;
+      }
+    }
+  }
+}

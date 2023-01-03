@@ -1,0 +1,37 @@
+.stepFormSection {
+  $p: &;
+  position: relative;
+
+  &__inner {
+    padding: 8rem 0;
+    background-color: $c-gray-4;
+    border-radius: .8rem;
+  }
+
+  &__stepForm {
+    padding: 0 1.6rem;
+
+    @include rwd('laptop') {
+      padding: 0 7%;
+    }
+  }
+
+  &__contact {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    margin-top: 3rem;
+    padding: 0 1.6rem;
+    transition: opacity $trM, max-height 9999px;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 9999px;
+    }
+
+    @include rwd('laptop') {
+      padding: 0 7%;
+    }
+  }
+}

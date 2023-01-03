@@ -1,0 +1,150 @@
+{
+    "key": "group_63203954ddff3",
+    "title": "Speakers",
+    "fields": [
+        {
+            "key": "field_6331a4a5cc765",
+            "label": "Country",
+            "name": "speaker_country",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 100,
+            "max_height": 100,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6320398ff193e",
+            "label": "Description",
+            "name": "speaker_description",
+            "type": "textarea",
+            "instructions": "Proszę wpisać krótki opis",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_633e84f7aebda",
+            "label": "Bio",
+            "name": "speaker_bio",
+            "type": "textarea",
+            "instructions": "Proszę wpisać krótki życiorys lektora",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_633e851caebdb",
+            "label": "Competence",
+            "name": "speaker_competence",
+            "type": "textarea",
+            "instructions": "Proszę wpisać kompetencje lektora",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_633e855198647",
+            "label": "Video",
+            "name": "speaker_video",
+            "type": "text",
+            "instructions": "Proszę wkleić kod ID filmu z kanału Youtube",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63513dc4d8d48",
+            "label": "Status",
+            "name": "speaker_status",
+            "type": "select",
+            "instructions": "Proszę określić status dostępności lektora (domyślnie - Dostępny)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "available": "Dostępny",
+                "busy": "Zajęty"
+            },
+            "default_value": "available",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "teacher"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1666269711
+}

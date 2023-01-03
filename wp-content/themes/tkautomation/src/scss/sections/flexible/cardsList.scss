@@ -1,0 +1,22 @@
+.cardsList {
+  $p: &;
+  position: relative;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__cards {
+    display: grid;
+    gap: 1.6rem;
+    margin-top: 2rem;
+
+    @include rwd('small-tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rwd('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

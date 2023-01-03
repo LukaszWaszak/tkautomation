@@ -1,0 +1,77 @@
+$rwdClassess : (
+  'large-laptop' : 'lgl',
+  'laptop'       : 'lg',
+  'large-tablet' : 'mdl',
+  'tablet'       : 'md',
+  'small-tablet' : 'mds',
+  'large-phone'  : 'sml',
+  'phone'        : 'sm'
+);
+
+$grid-column: 89;
+$grid-gap: 16;
+$grid-padding: 180;
+$grid-full: 1244;
+$grid-precize: 10000;
+$width: 1244px;
+$width-unitless: 1244;
+$padding: 71;
+
+@function gridBase($g-columns:1, $g-gaps:0, $g-paddings:0) {
+  @return (
+    ($g-columns * $grid-column)
+    + ($g-gaps * $grid-gap)
+    + ($g-paddings * $grid-padding)
+  );
+}
+
+@function gridFactor($g-columns:1, $g-gaps:0, $g-paddings:0, $g-base: $grid-full) {
+  $tmp-grid-part: gridBase($g-columns, $g-gaps, $g-paddings);
+	$tmp-grid-base: $g-base;
+	// @return ($tmp-grid-part / $tmp-grid-base);
+
+	$tmp-grid-value: floor(math.div($tmp-grid-part, $tmp-grid-base) * $grid-precize);
+	@if($tmp-grid-value % 2 != 0) {
+    $tmp-grid-pixel: 1;
+    @if($tmp-grid-value < 0) {
+      $tmp-grid-pixel: -1;
+    }
+		@return math.div(($tmp-grid-value - $tmp-grid-pixel), $grid-precize);
+	}
+	@return math.div($tmp-grid-value, $grid-precize);
+}
+
+@function gridPart($g-columns:1, $g-gaps:0, $g-paddings:0, $g-base: $grid-full) {
+  @return percentage(
+    gridFactor($g-columns, $g-gaps, $g-paddings, $g-base)
+  );
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: gridPart(0, 0, 1, gridBase(12, 11, 4));
+  padding-left: gridPart(0, 0, 1, gridBase(12, 11, 4));
+
+  @include rwd('ultra') {
+    max-width: $width + (2 * $padding);
+    padding-right: #{$padding}px;
+    padding-left: #{$padding}px;
+  }
+
+
+  &--full {
+    height: 100%;
+  }
+
+  &--fluid {
+    max-width: 100%;
+    padding: 0;
+
+    .row {
+      margin: 0;
+    }
+  }
+}

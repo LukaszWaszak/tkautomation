@@ -1,0 +1,57 @@
+.newsletterForm {
+  $p: &;
+  position: relative;
+
+  &__head {
+    text-align: center;
+
+    .text {
+      font-weight: $fw-light;
+
+      &__header {
+        & > * {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -0.8rem;
+    margin-top: 2rem;
+
+    @include rwd('tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__input {
+    margin: 0.5rem 0;
+    padding: 0 0.8rem;
+    width: 100%;
+
+    &:last-child {
+      width: auto;
+    }
+
+    @include rwd('tablet') {
+      width: auto;
+    }
+
+    @include rwd('large-tablet') {
+      margin: 0;
+
+      &:first-child {
+        max-width: 20%;
+      }
+
+      &:nth-child(2) {
+        min-width: 45%;
+      }
+    }
+  }
+}

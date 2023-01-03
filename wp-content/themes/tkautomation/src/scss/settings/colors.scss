@@ -1,0 +1,60 @@
+$c-black: #332C2B;
+$c-white: #FFFFFF;
+
+$c-prim-1: #003780;
+$c-prim-2: #003780;
+$c-prim-3: rgba(255, 242, 178, 0.2);
+$c-prim-4: #FCB64E;
+$c-prim: $c-prim-1;
+$c-prim-light: $c-prim-2;
+
+$c-gray-1: #707277;
+$c-gray-2: #B7B9C1;
+$c-gray-3: #E1E3EB;
+$c-gray-4: #F4F5F9;
+$c-gray: $c-gray-1;
+
+$c-blue-1: #006CB6;
+$c-blue-2: #1cc5dc;
+$c-blue-3: #4192C0;
+
+$c-lime-1: #C9F658;
+
+$c-green-1: #0C9A00;
+$c-green-2: #C9ECC6;
+$c-green-3: #CFE7CA;
+$c-green-4: #318E38;
+
+$c-orange-1: #FD8C04;
+$c-orange-2: rgba(253, 140, 4, .1);
+
+$c-purple-1: #003780;
+$c-purple-2: #DAD0FB;
+$c-secondary: $c-purple-1;
+$c-secondary-light: $c-purple-2;
+
+$c-red-1: #E05252;
+$c-red-2: #D6212A;
+$c-red-3: #FFF5F5;
+$c-red-4: #F3ADAF;
+$c-red-5: #D22E31;
+
+$c-error: $c-red-1;
+
+$d-sh-gray: rgba(0, 0, 0, 12%);
+$d-sh-black: rgba(41, 41, 41, 6%);
+$d-sh-orange: rgba(250, 140, 4, 20%);
+$d-sh-lime: rgba(201, 246, 88, 20%);
+$d-sh-azure: rgba(28, 197, 220, 20%);
+$d-sh-white: rgba(255, 255, 255, 20%);
+$d-sh-white-light: rgba(255, 255, 255, 3%);
+$d-sh-purple: rgba(107, 72, 255, 20%);
+
+$b-sh-gray: 0 4px 20px rgba(0, 0, 0, 10%);
+$b-sh-gray-light: 0 4px 16px rgba(0, 0, 0, 4%);
+$b-sh-gray-weak: 0 4px 4px rgba(0, 0, 0, 25%);
+$b-sh-primary: 0 4px 20px rgba(253, 209, 0, 10%);
+
+// Begin transparent colors
+$c-tr-white: rgba(255, 255, 255, 0.7);
+$c-tr-gray-4: rgba(244, 245, 249, 0.8);

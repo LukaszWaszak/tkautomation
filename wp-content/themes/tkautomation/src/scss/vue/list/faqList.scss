@@ -1,0 +1,16 @@
+.faqList {
+  $p: &;
+  position: relative;
+
+  &__group {
+    margin-bottom: 4rem;
+
+    @include rwd('large-tablet') {
+      margin-bottom: 8rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

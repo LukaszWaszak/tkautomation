@@ -1,0 +1,18 @@
+.faqGroup {
+  $p: &;
+  position: relative;
+
+  &__name {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $c-black;
+  }
+
+  &__item {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

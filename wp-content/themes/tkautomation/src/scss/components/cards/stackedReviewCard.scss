@@ -1,0 +1,86 @@
+.stackedReviewCard {
+  $p: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    background-color: $c-white;
+    filter: drop-shadow(0 16px 16px $d-sh-gray);
+  }
+
+  &__text {
+    text-overflow: ellipsis;
+  }
+
+  &__top {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &Inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      background-color: $c-gray-1;
+    }
+
+    &Play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    padding-top: 1.6rem;
+    margin-top: auto;
+  }
+
+  &__thumbnail {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-right: 2rem;
+
+    @include rwd('small-tablet') {
+      width: 52px;
+      height: 52px;
+    }
+
+    @include rwd('large-tablet') {
+      width: 68px;
+      height: 68px;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__author {
+    font-weight: $fw-light;
+
+    &Name {
+      color: $c-black;
+    }
+  }
+}

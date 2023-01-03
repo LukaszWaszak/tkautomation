@@ -1,0 +1,54 @@
+$fw-extraLight: 100;
+$fw-light: 200;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semiBold: 600;
+$fw-bold: 700;
+$fw-extraBold: 800;
+$fw-black: 900;
+
+
+$fws-lexend-deca: (
+   (
+     'name'   : 'RegularItalic',
+     'weight' : $fw-regular,
+     'style'  : 'italic'
+  ),
+  (
+     'name'   : 'Light',
+     'weight' : $fw-light,
+     'style'  : 'normal'
+  ),
+  (
+     'name'   : 'Medium',
+     'weight' : $fw-medium,
+     'style'  : 'normal'
+  ),
+  (
+    'name'   : 'Regular',
+    'weight' : $fw-regular,
+    'style'  : 'normal'
+  ),
+  (
+    'name'   : 'SemiBold',
+    'weight' : $fw-semiBold,
+    'style'  : 'normal'
+  ),
+  (
+    'name'   : 'Bold',
+    'weight' : $fw-bold,
+    'style'  : 'normal'
+  ),
+  (
+    'name'   : 'ExtraBold',
+    'weight' : $fw-extraBold,
+    'style'  : 'normal'
+  ),
+  (
+     'name'   : 'Black',
+     'weight' : $fw-black,
+     'style'  : 'normal'
+  ),
+);
+
+$f-main: "LexendDeca", "LexendDeca", sans-serif;

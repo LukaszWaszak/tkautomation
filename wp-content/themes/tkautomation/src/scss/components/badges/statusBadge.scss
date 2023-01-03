@@ -1,0 +1,40 @@
+.statusBadge {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: .8rem 1rem;
+    border-radius: 1.6rem;
+
+    #{$p}--busy & {
+      background-color: $c-red-4;
+    }
+
+    #{$p}--available & {
+      background-color: $c-green-3;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: .5rem;
+
+    #{$p}--busy & {
+      background-color: $c-red-5;
+    }
+
+    #{$p}--available & {
+      background-color: $c-green-4;
+    }
+  }
+
+  &__label {
+    font-weight: 1.2rem;
+    color: $c-black;
+  }
+}

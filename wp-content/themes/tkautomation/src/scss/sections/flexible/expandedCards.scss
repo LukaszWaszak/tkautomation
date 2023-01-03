@@ -1,0 +1,100 @@
+.expandedCards {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__shape {
+    display: none;
+    position: absolute;
+    z-index: -1;
+
+    @include rwd('tablet') {
+      display: block;
+    }
+
+    &--blue {
+      top: 18%;
+      left: 2%;
+      width: 79px;
+      height: 79px;
+      background-color: #4192C0;
+      transform: rotate(22deg);
+    }
+
+    &--purple,
+    &--rose {
+      width: 66px;
+      height: 66px;
+    }
+
+    &--purple {
+      bottom: 20%;
+      left: -2rem;
+      transform: scale(1, -1) rotate(5deg);
+    }
+
+    &--rose {
+      top: 50%;
+      right: 0;
+      transform: rotate(-45deg);
+    }
+
+    &--yellow {
+      top: 20%;
+      right: 10%;
+    }
+
+    &--lightYellow {
+      top: 40%;
+      left: 12%;
+    }
+
+    &--pattern {
+      bottom: 15%;
+      right: 9%;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    text-align: center;
+
+    @include rwd('small-tablet') {
+      width: gridPart(9, 8, 0);
+    }
+
+    @include rwd('tablet') {
+      width: gridPart(6, 5, 0);
+    }
+
+    .text {
+      &__text {
+        font-weight: $fw-light;
+      }
+    }
+  }
+
+  &__cards {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    @include rwd('tablet') {
+      width: gridPart(8, 7, 0);
+    }
+  }
+
+  &__card {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

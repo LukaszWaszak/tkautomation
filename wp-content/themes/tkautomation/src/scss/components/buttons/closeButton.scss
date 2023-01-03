@@ -1,0 +1,71 @@
+.closeButton {
+  $p: &;
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+  width: 6vw;
+  height: 6vw;
+  padding: 0;
+  visibility: visible;
+  color: currentColor;
+  cursor: pointer;
+
+  @include rwd('tablet', false) {
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  &__cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+
+    @include rwd('tablet') {
+      width: 40px;
+      height: 40px;
+    }
+
+    @keyframes closeButtonSpin {
+      0% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+
+    #{$p}:hover & {
+      animation: closeButtonSpin $trL $easeInOutCubic;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background-color: currentColor;
+      visibility: visible;
+
+      #{$p}--dark & {
+        background-color: $c-gray-1;
+      }
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

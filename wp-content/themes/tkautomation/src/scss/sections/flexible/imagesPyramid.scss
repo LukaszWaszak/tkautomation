@@ -1,0 +1,51 @@
+.imagesPyramid {
+  $p: &;
+  position: relative;
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -.8rem;
+  }
+
+  &__image {
+    padding: .8rem;
+    flex-grow: 1;
+    max-height: 420px;
+
+    @include rwd('small-tablet') {
+      width: 33%;
+    }
+
+    &:nth-child(n + 1) {
+      img {
+        border-radius: .8rem 0 0 0;
+      }
+    }
+
+    &:nth-child(n + 2) {
+      img {
+        border-radius: 0 .8rem 0 0;
+      }
+    }
+
+    &:nth-child(n + 3) {
+      img {
+        border-radius: 0 0 0 .8rem;
+      }
+    }
+
+    &:nth-child(n + 4) {
+      img {
+        border-radius: 0 0 .8rem 0;
+      }
+    }
+
+    &:first-child,
+    &:nth-child(4n) {
+      @include rwd('small-tablet') {
+        width: 67%;
+      }
+    }
+  }
+}

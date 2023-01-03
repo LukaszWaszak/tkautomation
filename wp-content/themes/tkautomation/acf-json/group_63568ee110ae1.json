@@ -1,0 +1,106 @@
+{
+    "key": "group_63568ee110ae1",
+    "title": "Instagram Posts",
+    "fields": [
+        {
+            "key": "field_63568ee75e591",
+            "label": "API Key",
+            "name": "instagram_api_key",
+            "type": "text",
+            "instructions": "Proszę wkleić klucz API Instagram",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63568efd5e592",
+            "label": "Profile ID",
+            "name": "instagram_profile_id",
+            "type": "text",
+            "instructions": "Proszę wkleić ID profilu instagram",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6357961ff10ab",
+            "label": "Channel Name",
+            "name": "instagram_channel_name",
+            "type": "text",
+            "instructions": "Proszę wpisać nazwę kanału",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63579635f10ac",
+            "label": "Channel Image",
+            "name": "instagram_channel_image",
+            "type": "image",
+            "instructions": "Proszę ustawić obrazek kanału IG",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "instagram-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1666684510
+}

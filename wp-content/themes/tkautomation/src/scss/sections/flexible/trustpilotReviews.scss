@@ -1,0 +1,10 @@
+.trustpilotReviews {
+  $p: &;
+  position: relative;
+
+  #profile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

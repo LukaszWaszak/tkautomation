@@ -1,0 +1,33 @@
+/* CONTACT FORM 7 STYLES */
+
+.wpcf7-list-item {
+  padding: .5rem 0;
+}
+
+.wpcf7-list-item-label {
+  font-size: 1.4rem;
+  font-weight: $fw-light;
+  color: $c-gray-1;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+form {
+  &.submitting {
+    .wpcf7-spinner {
+      display: inline-block;
+    }
+  }
+}
+
+input[type='checkbox'] {
+  & + .wpcf7-list-item-label {
+    font-size: 1.2rem;
+
+    @include rwd('large-tablet') {
+      font-size: 1.4rem;
+    }
+  }
+}

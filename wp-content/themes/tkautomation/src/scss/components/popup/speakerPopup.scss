@@ -1,0 +1,186 @@
+.speakerPopup {
+  $p: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  &__header,
+  &__type {
+    color: $c-black;
+  }
+
+  &__header {
+    margin-bottom: .5rem;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+
+    &Name {
+      margin-right: .5rem;
+    }
+
+    &Country {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__tag {
+    padding-right: 1.6rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &Inner {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .5rem 1.6rem;
+      border-radius: .8rem;
+      background-color: $c-purple-1;
+      color: $c-white;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    height: 78%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 1rem;
+      border-radius: .8rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: .8rem;
+      background-color: $c-prim-1;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: .8rem;
+      background-color: $c-gray-3;
+    }
+  }
+
+  &__data {
+    width: 100%;
+    direction: rtl;
+
+    &::-webkit-scrollbar {
+      width: 1rem;
+      border-radius: .8rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: .8rem;
+      background-color: $c-prim-1;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: .8rem;
+      background-color: $c-gray-3;
+    }
+
+    @include rwd('tablet') {
+      width: 40%;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    @include rwd('large-tablet') {
+      width: 50%;
+    }
+  }
+
+  &__asset {
+    direction: ltr;
+
+    &Header,
+    &Content {
+      margin-bottom: 1rem;
+      font-weight: $fw-light;
+    }
+
+    &Header {
+      color: $c-purple-1;
+    }
+
+    &Content {}
+  }
+
+  &__outro {
+    width: 100%;
+
+    @include rwd('tablet') {
+      width: 60%;
+      padding-left: 10%;
+    }
+
+    @include rwd('large-tablet') {
+      width: 50%;
+      padding-left: 12%;
+    }
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    padding-top: 65%;
+    margin-top: 2rem;
+
+    @include rwd('tablet') {
+      margin-top: 0;
+    }
+
+    &Inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__more {
+    width: 100%;
+    margin-top: 2rem;
+
+    .button {
+      width: 100%;
+    }
+  }
+}

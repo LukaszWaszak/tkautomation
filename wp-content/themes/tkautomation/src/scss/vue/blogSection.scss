@@ -1,0 +1,134 @@
+.blogSection {
+  $p: &;
+  position: relative;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include rwd('large-tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__head {
+    .text {
+      &__header {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+    @include rwd('large-tablet') {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+
+  &__category {
+    margin: .5rem 1rem .5rem 0;
+
+    @include rwd('large-tablet') {
+      margin: 0 0 0 2rem;
+    }
+  }
+
+  &__list {
+    padding: 3rem 0;
+
+    @include rwd('large-tablet') {
+      width: gridPart(12, 11, 0.75);
+    }
+
+    @include rwd('ultra') {
+      width: gridPart(12, 11, 1);
+    }
+
+    &.loading {
+      min-height: 400px;
+    }
+  }
+
+  &__item {
+    height: auto;
+    width: gridPart(11, 10, 0);
+    margin-right: 1.6rem;
+
+    @include rwd('small-tablet') {
+      width: gridPart(5, 4, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(5, 4, 0, gridBase(12, 11 , 0.75));
+    }
+
+    @include rwd('ultra') {
+      width: gridPart(5, 4, 0, gridBase(12, 11 , 1));
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include rwd('large-tablet') {
+      flex-wrap: nowrap;
+    }
+
+    &Buttons {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      @include rwd('large-tablet') {
+        flex-wrap: nowrap;
+        width: auto;
+      }
+    }
+
+    &Button {
+      margin: .5rem 2rem .5rem 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include rwd('large-tablet') {
+        margin: 0 2rem 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    &Button {
+      margin: .5rem 1.6rem .5rem 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include rwd('large-tablet') {
+        margin: 0 1.6rem 0 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

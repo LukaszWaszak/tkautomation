@@ -1,0 +1,41 @@
+.cardsLinksSection {
+  $p: &;
+  position: relative;
+  overflow: unset;
+  padding-top: 8rem;
+
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+
+    @include rwd('small-tablet') {
+      width: 80%;
+    }
+
+    @include rwd('tablet') {
+      width: 50%;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    margin: -.8rem;
+  }
+
+  &__card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: .8rem;
+
+    @include rwd('small-tablet') {
+      // flex: 0 0 50%;
+      // max-width: 50%;
+    }
+
+    @include rwd('laptop') {
+      width: 100%;
+    }
+  }
+}

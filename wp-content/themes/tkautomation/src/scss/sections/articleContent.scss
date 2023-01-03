@@ -1,0 +1,61 @@
+.articleContent {
+  $p: &;
+  position: relative;
+  overflow: unset;
+  padding-top: 4rem;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__toc {
+    width: 100%;
+    align-self: flex-start;
+
+    @include rwd('small-tablet') {
+      width: 70%;
+    }
+
+    @include rwd('tablet') {
+      position: sticky;
+      top: 200px;
+      width: gridPart(3, 2, 0);
+      margin-right: 2rem;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 4rem;
+
+    @include rwd('tablet') {
+      width: calc(#{gridPart(9, 9, 0)} - 2rem);
+      margin-top: 0;
+    }
+
+    .textEditor,
+    .eBookBanner {
+      margin-bottom: 4rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__divider {
+    margin: 4rem 0;
+    border-bottom: 1px solid $c-gray-3;
+
+    &--small {
+      margin: 2.5rem 0;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}

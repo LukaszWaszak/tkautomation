@@ -1,0 +1,125 @@
+$options: '.formSelect__options';
+
+.formSelect {
+  $p: &;
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+
+  &__options {
+    position: relative;
+    background-color: $c-white;
+    margin-top: 1rem;
+
+    #{$p}--floatingLabel & {
+      margin-top: 0;
+    }
+  }
+
+  &__selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    min-height: 56px;
+    background-color: $c-purple-1;
+    color: $c-white;
+    border-radius: .8rem;
+
+    #{$p}--theme-white & {
+      background-color: $c-white;
+      color: $c-gray-2;
+      border: 1px solid $c-gray-4;
+    }
+
+    &Placeholder {
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      font-weight: $fw-light;
+      transition: top $trM, font-size $trM;
+
+      @include rwd('laptop') {
+        font-size: 1.6rem;
+      }
+
+      #{$options}.selected & {
+        top: 30%;
+        font-size: 1.2rem;
+      }
+    }
+
+    &Item {
+      transition: transform $trM;
+
+      #{$options}.selected & {
+        transform: translateY(1rem);
+        color: $c-black;
+      }
+    }
+
+    &Icon {
+      position: relative;
+      font-size: 1.4rem;
+      z-index: 0;
+
+      #{$p}--theme-white & {
+        color: $c-black;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: -1;
+          width: 20px;
+          height: 20px;
+          border-radius: .4rem;
+          background-color: $c-prim-2;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 .8rem .8rem;
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+    background-color: $c-white;
+    transition: opacity $trM, max-height $trM;
+
+    &.active,
+    #{$options}.active & {
+      opacity: 1;
+      max-height: 1000px;
+      visibility: visible;
+    }
+
+    &Item {
+      padding: 1.5rem 2rem;
+      word-break: break-all;
+      cursor: pointer;
+      transition: background-color $trM, color $trM;
+
+      &:hover {
+        background-color: $c-purple-1;
+        color: $c-white;
+
+        #{$p}--theme-white & {
+          background-color: $c-prim-2;
+          color: $c-black;
+        }
+      }
+    }
+  }
+}

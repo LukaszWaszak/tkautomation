@@ -1,0 +1,159 @@
+.footer {
+  $p: &;
+  position: relative;
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    border-bottom: 2px solid $c-gray-3;
+    overflow: hidden;
+
+    @include rwd('small-tablet', false) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5rem 0;
+    font-weight: $fw-light;
+
+    @include rwd('small-tablet') {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    @include rwd('large-tablet') {
+      padding: 4rem 0;
+    }
+
+    &Left {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      @include rwd('small-tablet') {
+        justify-content: flex-start;
+      }
+
+      &Item {
+        text-align: center;
+        padding: .5rem 1.5rem;
+        border-left: 1px solid $c-gray-1;
+
+        @include rwd('small-tablet') {
+          text-align: left;
+        }
+
+        @include rwd('large-tablet') {
+          padding: 0 1.5rem;
+        }
+
+        &:first-child {
+          padding-left: 0;
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    width: gridPart(2, 1, 0);
+    min-width: 90px;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity $trM, transform $trM;
+
+    #{$intersect} & {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+
+    .imageBox {
+      img {
+        max-width: 165px;
+      }
+    }
+  }
+
+  &__menus {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin: -0.5rem 0;
+
+    @include rwd('large-tablet') {
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-left: 1.6rem;
+    padding: 0.5rem 0;
+
+    @include rwd('small-tablet', false) {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0;
+      margin-top: 15px;
+    }
+
+    @include rwd('large-tablet') {
+      padding: 0;
+    }
+
+    &Name {
+      color: $c-black;
+      margin-bottom: .8rem;
+
+      @include rwd('tablet') {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &Items {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: flex-end;
+
+      @include rwd('small-tablet', false) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+
+    &Item {
+      margin: 0px 10px 0px 10px;
+      padding: .2rem 0;
+      font-weight: $fw-light;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    margin: 0 -1.2rem;
+    padding: 2rem 0;
+
+    @include rwd('small-tablet') {
+      padding: 0;
+    }
+
+    &Item {
+      padding: 0 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.formInput {
+  $p: &;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+
+  &__input {
+    width: 100%;
+    min-height: 56px;
+    border-radius: .8rem;
+    padding: 1.6rem 2.4rem;
+    font-weight: $fw-light;
+    background-color: $c-white;
+
+    &--error {
+      color: $c-red-1;
+
+      &::placeholder {
+        color: $c-red-1;
+      }
+    }
+
+    #{$p}--pagination & {
+      width: 40px;
+      height: 40px;
+      min-height: unset;
+      background-color: $c-gray-4;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.iconDetailsCard {
+  $p: &;
+  position: relative;
+  padding: 1.6rem;
+  border-radius: .8rem;
+  box-shadow: $b-sh-gray-light;
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-right: 1.6rem;
+
+    @include rwd('tablet') {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include rwd('laptop') {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+
+    .text {
+      &__header {
+        margin-bottom: 0;
+        & > * {
+          color: $c-purple-1;
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 2rem;
+    font-weight: $fw-light;
+  }
+}

@@ -1,0 +1,13 @@
+.adminGoogleReviews {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  &__hint {
+    margin-bottom: 2rem;
+  }
+}

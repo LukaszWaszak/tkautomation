@@ -1,0 +1,28 @@
+.resourcesFilterSection {
+  $p: &;
+  position: relative;
+  min-height: calc(100vh - 191px);
+
+  &__hero {
+    width: 100%;
+
+    @include rwd('small-tablet') {
+      width: gridPart(9, 8, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(6, 4, 0);
+    }
+
+    .text {
+      &__text {
+        font-weight: $fw-light;
+        color: $c-black;
+      }
+    }
+  }
+
+  &__resources {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,10 @@
+.summary {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    padding: 3.2rem;
+    border-radius: 1.6rem;
+    background-color: $c-gray-4;
+  }
+}

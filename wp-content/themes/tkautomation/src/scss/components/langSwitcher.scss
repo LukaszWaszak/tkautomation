@@ -1,0 +1,33 @@
+.langSwitcher {
+  $p: &;
+  position: relative;
+  background-color: $c-white;
+
+  &__currentLang {
+    padding: .4rem 1.6rem;
+    border: 1px solid $c-black;
+    border-radius: .8rem;
+  }
+
+  &__langs {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: .4rem 1.6rem;
+    opacity: 0;
+    visibility: hidden;
+    background-color: $c-white;
+    transition: opacity $tr, visibility hidden;
+
+    #{$p}:hover & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__lang {
+    text-align: center;
+  }
+}

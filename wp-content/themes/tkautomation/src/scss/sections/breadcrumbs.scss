@@ -1,0 +1,16 @@
+.breadcrumbs {
+  $p: &;
+  position: relative;
+  padding: 2rem 0 3rem 0;
+  color: $c-black;
+
+  & + section {
+    padding-top: 0;
+  }
+
+  .breadcrumb {
+    &_last {
+      font-weight: $fw-bold;
+    }
+  }
+}

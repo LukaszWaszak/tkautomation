@@ -1,0 +1,97 @@
+.faqFilter {
+  $p: &;
+  position: relative;
+
+  &__search {
+    width: 100%;
+
+    @include rwd('tablet') {
+      width: gridPart(6, 5, 0);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+
+  &__filters {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include rwd('large-tablet') {
+      width: gridPart(3, 2, 0);
+      margin-bottom: 0;
+    }
+
+    &Label {
+      margin-bottom: 1rem;
+      color: $c-black;
+    }
+
+    &Hint {
+      width: 100%;
+      padding: 2rem;
+      color: $c-black;
+      background-color: $c-prim-2;
+      margin-top: 2rem;
+
+      @include rwd('large-tablet') {
+        width: 90%;
+        margin-top: 0;
+      }
+    }
+
+    &Options {
+      display: flex;
+      overflow: auto;
+      margin: -.8rem;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $c-prim-1;
+        border-radius: .8rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $c-white;
+      }
+
+      @include rwd('large-tablet') {
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+
+  &__filter {
+    flex-shrink: 0;
+    padding: .8rem;
+
+    @include rwd('large-tablet') {
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__results {
+    width: 100%;
+
+    @include rwd('large-tablet') {
+      width: gridPart(9, 9, 0);
+      padding: 0 5rem 0 3rem;
+    }
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 40vh;
+  }
+}

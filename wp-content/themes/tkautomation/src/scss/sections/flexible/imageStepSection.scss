@@ -1,0 +1,58 @@
+.imageStepSection {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    width: 100%;
+    position: relative;
+
+    @include rwd('small-tablet') {
+      width: gridPart(9, 7, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(4, 3, 0);
+      margin-right: gridPart(1, 2, 0);
+    }
+
+    .text {
+
+      &__text {
+        font-weight: $fw-light;
+      }
+    }
+  }
+
+  &__more {
+    margin-top: 2rem;
+  }
+
+  &__cards {
+    width: 100%;
+    margin-top: 3rem;
+
+    @include rwd('large-tablet') {
+      width: gridPart(7, 6, 0);
+      margin-top: 0;
+    }
+  }
+
+  &__card {
+    padding: 2rem 0;
+    border-bottom: 1px solid $c-gray-3;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}

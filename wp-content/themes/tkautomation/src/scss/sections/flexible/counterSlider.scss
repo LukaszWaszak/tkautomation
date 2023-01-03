@@ -1,0 +1,105 @@
+.counterSlider {
+  $p: &;
+  position: relative;
+  background-color: $c-gray-4;
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &--secondary {
+    background-color: rgba($c-gray-4, 30%);
+  }
+
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+
+    .text {
+      &__header {
+        font-weight: $fw-medium;
+
+        h5 {
+          color: white;
+
+        }
+      }
+    }
+  }
+
+  &__inner {}
+
+  &__slides {
+    display: flex;
+    margin-top: 3rem;
+  }
+
+  &__slide {
+    display: flex;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity $trM, transform $trM;
+
+    #{$intersect} & {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include rwd('small-tablet') {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-right: 2rem;
+    }
+
+    @include rwd('tablet') {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+
+    @include rwd('large-laptop') {
+      flex: 0 0 25%;
+      max-width: 25%;
+      padding-right: 4rem;
+    }
+
+    &Icon {
+      position: relative;
+      height: 100px;
+
+      img {
+        max-width: 350px;
+      }
+
+      &Bg {
+        margin: -2rem 0 0 2rem;
+        position: relative;
+        z-index: -1;
+      }
+    }
+
+    &Content {
+      flex-grow: 1;
+      margin-left: 2rem;
+
+      @include rwd('large-laptop') {
+        margin-left: 3rem;
+      }
+    }
+
+    &Number,
+    &Text {
+      font-weight: $fw-medium;
+    }
+
+    &Number {
+      color: $c-purple-1;
+    }
+
+    &Text {
+      color: $c-black;
+    }
+  }
+
+}

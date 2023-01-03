@@ -1,0 +1,144 @@
+.blogPostsFilter {
+  $p: &;
+  position: relative;
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+    margin-top: 3rem;
+  }
+
+  &__notFound {
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @include rwd('laptop') {
+      width: gridPart(8, 7, 0);
+      margin: 0;
+    }
+  }
+
+  &__search {
+    width: 100%;
+
+    @include rwd('tablet') {
+      width: gridPart(6, 5, 0);
+    }
+  }
+
+  &__filters {
+    margin-top: 2rem;
+
+    &Label {
+      margin-bottom: 1rem;
+    }
+
+    &Wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: -.8rem;
+    }
+  }
+
+  &__filter {
+    flex-shrink: 0;
+    padding: .8rem;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+
+  &__featured {
+    width: 100%;
+    order: 2;
+
+    &Wrapper {
+      margin: -1.6rem;
+    }
+
+    @include rwd('laptop') {
+      width: gridPart(8, 7, 0);
+      padding-right: 2rem;
+      order: unset;
+    }
+  }
+
+  &__popular {
+    width: 100%;
+    order: 1;
+    margin-bottom: 3rem;
+
+    @include rwd('laptop') {
+      width: gridPart(4, 4, 0);
+      padding-left: 2rem;
+      margin-bottom: 0;
+      order: unset;
+      border-left: 1px solid $c-gray-2;
+    }
+
+    &Label {
+      margin-bottom: 2rem;
+      font-weight: $fw-light;
+      color: $c-purple-1;
+    }
+
+    &List {
+      display: grid;
+      gap: 1.6rem;
+      width: 100%;
+
+      @include rwd('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include rwd('laptop') {
+        display: block;
+      }
+    }
+
+    &Item {
+      @include rwd('laptop') {
+        margin-bottom: 2.4rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__post {
+    padding: 1.6rem;
+  }
+
+  &__form {
+    margin-top: 5rem;
+  }
+
+  &__bottom {
+    width: 100%;
+    margin: -1.6rem;
+    margin-top: 5rem;
+
+    @include rwd('tablet') {
+      width: gridPart(10, 9, 0);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid $c-gray-2;
+  }
+}

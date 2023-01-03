@@ -1,0 +1,144 @@
+.heroHeader {
+  $p: &;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  // padding: 5rem 0;
+  height: 80vh;
+
+  &__bg {
+    height: 100%;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100%;
+
+    @include rwd('large-tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__text {
+    width: gridPart(12, 11, 0);
+    flex-shrink: 0;
+
+    @include rwd('tablet') {
+      width: gridPart(10, 9, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(6, 5, 0);
+    }
+
+    .text {
+      position: relative;
+      height: 100%;
+
+      .header__bg {
+        width: 100%;
+        z-index: 100;
+
+      }
+
+      &__header {
+        font-weight: $fw-medium;
+        margin-bottom: 2rem;
+        height: 100%;
+
+        h3 {
+          height: 100%;
+          color: $c-white !important;
+
+        }
+      }
+
+      &__subtitle {
+        font-weight: $fw-light;
+
+      }
+
+      &__text {
+        font-weight: $fw-light;
+        color: $c-white;
+      }
+    }
+
+    #{$p}--small & {
+      width: gridPart(12, 9, 0);
+
+      @include rwd('large-tablet') {
+        width: gridPart(5, 4, 0);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+
+    @include rwd('small-tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__button {
+    margin-right: 2.5rem;
+
+    &:last-child {
+      @media (max-width:410px) {
+
+        margin-top: 2rem;
+      }
+    }
+
+    @include rwd('small-tablet') {
+      margin-top: unset;
+
+      &:last-child {
+        margin-top: unset;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: gridPart(12, 11, 0);
+    flex-shrink: 0;
+    margin-top: 4rem;
+    margin-left: auto;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity $trM, transform $trM;
+
+    #{$p}.intersect & {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @include rwd('small-tablet') {
+      width: gridPart(8, 7, 0);
+    }
+
+    @include rwd('large-tablet') {
+      left: gridPart(0, 2, 0);
+      margin-top: unset;
+      margin-left: unset;
+    }
+
+    #{$p}--small & {
+      left: 0;
+      flex-shrink: unset;
+
+      @include rwd('large-tablet') {
+        width: gridPart(6, 5, 0);
+        margin-left: gridPart(1, 1, 0);
+      }
+    }
+  }
+}

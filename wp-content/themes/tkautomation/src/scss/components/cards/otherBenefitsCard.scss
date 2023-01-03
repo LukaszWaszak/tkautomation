@@ -1,0 +1,31 @@
+.otherBenefitsCard{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+@include rwd('small-tablet'){
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+  @include rwd('large-tablet'){
+  padding-top: 20px;
+  }
+
+
+  &__title{
+    padding-top: 20px;
+   
+    h5{
+      color: #6D40FE;
+    }
+  }
+  &__desc{
+    padding-top: 20px;
+    p{
+      font-weight: 300;
+      line-height: 2.8rem;
+      font-size: 18px; 
+    }
+  }
+}

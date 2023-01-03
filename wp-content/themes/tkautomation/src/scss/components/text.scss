@@ -1,0 +1,36 @@
+.text {
+  $p: &;
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+
+  &__header {
+    margin-bottom: 2rem;
+
+    &>* {
+      color: $c-gray-1;
+
+      &::nth-last-word(2) {
+        color: $c-prim-1;
+      }
+    }
+  }
+
+  &__header,
+  &__subtitle,
+  &__text {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity $tr, transform $trM;
+
+    #{$intersect} & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+    color: $c-purple-1;
+  }
+}

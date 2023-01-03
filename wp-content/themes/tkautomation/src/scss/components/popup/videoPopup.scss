@@ -1,0 +1,21 @@
+.videoPopup {
+  $p: &;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,66 @@
+.resourcesHero {
+  $p: &;
+  position: relative;
+  overflow: unset;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__thumbnail {
+    align-self: flex-start;
+    margin-right: 4rem;
+    width: gridPart(9, 8, 0);
+
+    @include rwd('small-tablet') {
+      width: gridPart(6, 5, 0);
+    }
+
+    @include rwd('tablet') {
+      width: gridPart(4, 3, 0);
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin-top: 3rem;
+
+    @include rwd('tablet') {
+      width: calc(#{gridPart(8, 8, 0)} - 4rem);
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 3rem;
+  }
+
+  &__header {
+    font-weight: $fw-light;
+
+    .text {
+      &__header {
+        & > * {
+          color: $c-purple-1;
+        }
+      }
+    }
+  }
+
+  &__scrollLink {
+    margin-top: 2rem;
+  }
+
+  &__textEditor {
+    padding-left: 2rem;
+    margin-top: 3rem;
+    border-left: 1px solid $c-gray-3;
+
+    @include rwd('tablet') {
+      margin-top: 8rem;
+    }
+  }
+}

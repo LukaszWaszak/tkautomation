@@ -1,0 +1,94 @@
+.newsletter {
+  $p: &;
+  position: relative;
+  padding: 0;
+
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+    border-radius: 2rem;
+    background-color: $c-purple-1;
+    color: $c-white;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    &::after {
+      z-index: 2;
+      top: 15%;
+      left: -18px;
+      width: 36px;
+      height: 36px;
+      background-color: $c-prim-1;
+
+      @include rwd('tablet') {
+        width: 53px;
+        height: 53px;
+        left: -26px;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+
+    @include rwd('tablet') {
+      padding: 9rem 0;
+    }
+  }
+
+  &__circles {
+    position: absolute;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      padding-top: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--left,
+    &--right {
+      width: 23%;
+    }
+
+    &--left {
+      left: 0;
+      bottom: 0;
+
+      &::after {
+        transform: translate(-5%, -75%);
+        background-image: url('../images/circles.svg');
+      }
+    }
+
+    &--right {
+      right: 0;
+      top: 0;
+
+      &::after {
+        transform: translate(45%, 0%);
+        background-image: url('../images/circles_2.svg');
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    padding: 0 3rem;
+
+    @include rwd('large-tablet') {
+      width: gridPart(9, 8, 0);
+      margin: 0 auto;
+    }
+  }
+}

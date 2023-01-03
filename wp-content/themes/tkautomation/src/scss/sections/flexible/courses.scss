@@ -1,0 +1,31 @@
+.courses {
+  $p: &;
+  position: relative;
+  background-color: $c-gray-4;
+
+  &__top {
+    width: gridPart(12, 11, 0);
+
+    @include rwd('small-tablet') {
+      width: gridPart(5, 4, 0);
+    }
+  }
+
+  &__tag,
+  &__header {
+    margin-bottom: .8rem;
+  }
+
+  &__header {
+    .text {
+      &__text {
+        font-weight: $fw-light;
+        color: $c-black;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+  }
+}

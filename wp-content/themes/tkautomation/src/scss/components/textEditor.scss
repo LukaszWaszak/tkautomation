@@ -1,0 +1,276 @@
+.textEditor {
+  $p: &;
+  position: relative;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: $fw-light;
+    line-height: (24 / 16);
+    margin-bottom: 1.6rem;
+
+    @include rwd('ultra') {
+      font-size: 1.8rem;
+      line-height: (32 / 18);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.6rem;
+    font-weight: $fw-light;
+    color: $c-purple-1;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: 4.8rem;
+    line-height: (80 / 118);
+
+    @include rwd('tablet') {
+      font-size: 5.4rem;
+    }
+    @include rwd('large-tablet') {
+      font-size: 6rem;
+      line-height: (80 / 118);
+    }
+    @include rwd('laptop') {
+      font-size: 7rem;
+      line-height: (80 / 118);
+    }
+    @include rwd('ultra') {
+      font-size: 8rem;
+      line-height: (80 / 118);
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    line-height: (76 / 60);
+
+    @include rwd('tablet') {
+      font-size: 4.2rem;
+      line-height: (76 / 60);
+    }
+    @include rwd('large-tablet') {
+      font-size: 5.2rem;
+      line-height: (76 / 60);
+    }
+    @include rwd('ultra') {
+      font-size: 6rem;
+      line-height: (76 / 60);
+    }
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    line-height: (48 / 32);
+
+    @include rwd('tablet') {
+      font-size: 3.6rem;
+      line-height: (48 / 40);
+    }
+
+    @include rwd('large-tablet') {
+      font-size: 4rem;
+      line-height: (52 / 44);
+    }
+
+    @include rwd('large-laptop') {
+      font-size: 4.4rem;
+      line-height: (52 / 44);
+    }
+
+    @include rwd('ultra') {
+      font-size: 4.8rem;
+      line-height: (56 / 48);
+    }
+  }
+
+  h4 {
+    font-size: 2.4rem;
+    line-height: (44 / 34);
+
+    @include rwd('large-tablet') {
+      font-size: 2.6rem;
+      line-height: (44 / 34);
+    }
+    @include rwd('ultra') {
+      font-size: 3.4rem;
+      line-height: (44 / 34);
+    }
+  }
+
+  h5 {
+    font-size: 2rem;
+    line-height: (36 / 24);
+
+    @include rwd('large-tablet') {
+      font-size: 2.2rem;
+      line-height: (36 / 24);
+    }
+    @include rwd('ultra') {
+      font-size: 2.4rem;
+      line-height: (36 / 24);
+    }
+  }
+
+  h6 {
+    font-size: 1.8rem;
+    line-height: (32 / 20);
+
+    @include rwd('ultra') {
+      font-size: 2rem;
+      line-height: (32 / 20);
+    }
+  }
+
+  ul {
+    padding-left: 2.4rem;
+    margin-bottom: 1.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style-image: url('../images/list_check.svg');
+      padding-inline-start: .8rem;
+      font-size: 1.6rem;
+      font-weight: $fw-light;
+      line-height: (24 / 16);
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include rwd('ultra') {
+        font-size: 1.8rem;
+        line-height: (32 / 18);
+      }
+    }
+  }
+
+  ol {
+    list-style: decimal;
+    padding-left: 2rem;
+
+    li {
+      font-size: 1.6rem;
+      font-weight: $fw-light;
+      line-height: (24 / 16);
+
+      @include rwd('ultra') {
+        font-size: 1.8rem;
+        line-height: (32 / 18);
+      }
+    }
+
+    & > li {
+      position: relative;
+      padding: 1.5rem 0;
+      padding-left: 1rem;
+      color: $c-gray-1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -2rem;
+        width: calc(100% + 2rem);
+        height: 1px;
+        background-color: $c-gray-3;
+      }
+
+      &:first-child {
+        padding-top: 0;
+        color: $c-black;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    & > li > ol {
+      margin-top: .8rem;
+      padding-inline-start: 1.6rem;
+
+      li {
+        padding: 0;
+        padding-left: .5rem;
+        border-bottom: none;
+        color: $c-black;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  blockquote {
+    padding: 1rem 2rem;
+    border-left: 2px solid $c-purple-1;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $c-black;
+      font-weight: $fw-regular;
+    }
+  }
+
+  .wp-caption {
+    width: 100% !important;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: .8rem;
+    }
+
+    .wp-caption-text {
+      margin-top: 1.6rem;
+    }
+  }
+
+  ul#{$p}__attachments {
+    li {
+      list-style-image: url('../images/icon_attachment.svg');
+    }
+  }
+
+  &--list-normal {
+    ol {
+      & > li {
+        padding: 0;
+        padding-left: 1rem;
+        margin-bottom: .8rem;
+
+        &::marker {
+          color: $c-purple-1;
+        }
+
+        &:first-of-type {
+          color: $c-gray-1;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

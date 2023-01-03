@@ -1,0 +1,134 @@
+.offerSection {
+  $p: &;
+  position: relative;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include rwd('large-tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__head {
+    width: 100%;
+
+    @include rwd('large-tablet') {
+      width: gridPart(5, 5, 0);
+      margin-right: gridPart(0.5, 0, 0);
+    }
+
+    .text {
+      &__header {
+        margin-bottom: 2rem;
+      }
+
+      &__text {
+        color: $c-black;
+        font-weight: $fw-light;
+      }
+    }
+  }
+
+  &__image {
+
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity $trM, transform $trM;
+    width: 100%;
+
+    #{$intersect} & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @include rwd('small-tablet') {
+      width: 40% !important;
+    }
+
+
+
+    &Inner {
+      width: 100%;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 0px 16px $d-sh-gray;
+
+      .imageBox {
+        display: flex;
+        justify-content: center;
+      }
+
+      img {
+        width: 80%;
+        object-fit: cover;
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+
+    @include rwd('tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin: .5rem 1.6rem .5rem 0;
+    color: $c-black;
+
+    @include rwd('tablet') {
+      width: auto;
+    }
+  }
+
+  &__bottom {
+    margin-top: 5rem;
+
+    &Head {
+      text-align: center;
+    }
+
+    @include rwd('large-tablet') {
+      margin-top: 8rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2rem;
+
+    @include rwd('large-tablet') {
+      flex-wrap: nowrap;
+      padding: 0 1.6rem;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0 0.8rem;
+
+    @include rwd('small-tablet') {
+      width: 50%;
+    }
+
+    @include rwd('large-tablet') {
+      margin: 0;
+      width: 33.3333%;
+    }
+  }
+}

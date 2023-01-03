@@ -1,0 +1,49 @@
+.stackedCardsCarousel {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__slider {
+    width: 100%;
+    order: 2;
+    margin-top: 2rem;
+    padding-bottom: 10%;
+
+    @include rwd('large-tablet') {
+      width: gridPart(7, 6, 0);
+      padding-right: 4rem;
+      order: 1;
+      margin-top: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    order: 1;
+
+    @include rwd('tablet') {
+      width: gridPart(10, 9, 0);
+    }
+
+    @include rwd('large-tablet') {
+      width: gridPart(5, 5, 0);
+      order: 2;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -.8rem;
+    margin-top: 1rem;
+  }
+
+  &__social {
+    padding: .8rem;
+  }
+}

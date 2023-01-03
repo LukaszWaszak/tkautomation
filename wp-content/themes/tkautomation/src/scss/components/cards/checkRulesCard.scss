@@ -1,0 +1,23 @@
+.checkRulesCard {
+  display: flex;
+
+
+
+  &__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  &__title{
+    padding-left: 20px;
+    p{
+      color: black;
+      font-weight: 300;
+      font-size: 25px;
+    }
+  }
+}

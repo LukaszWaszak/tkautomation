@@ -1,0 +1,104 @@
+.speakersSection {
+  $p: &;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &--vertical {
+    background-color: $c-gray-4;
+  }
+
+  @include rwd('large-tablet') {
+    flex-wrap: nowrap;
+
+    &--vertical {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__head {
+    width: gridPart(12, 11, 0);
+
+    @include rwd('large-tablet') {
+      width: gridPart(5, 4, 0);
+      margin-right: gridPart(0, 1, 0);
+
+      #{$p}:not(#{$p}--vertical) & {
+        position: sticky;
+        top: 200px;
+        align-self: flex-start;
+      }
+    }
+
+    #{$p}--vertical & {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    width: gridPart(12, 11, 0);
+    min-height: 90vh;
+    margin-top: 3rem;
+
+    @include rwd('large-tablet') {
+      width: gridPart(7, 6, 0);
+      padding-left: gridPart(0.75, 0, 0);
+      margin-top: 0;
+
+      #{$p}--vertical & {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &__text,
+  &__header {
+    margin-top: 1.5rem;
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+    @include rwd('large-tablet') {
+      display: block;
+
+      #{$p}--vertical & {
+        display: flex;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__category {
+    margin: .5rem 1.5rem .5rem 0;
+
+    @include rwd('large-tablet') {
+      margin: 1.5rem 0 0 0;
+
+      &:first-child {
+        margin: 0;
+      }
+
+      #{$p}--vertical & {
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  &__more {
+    margin-top: 3rem;
+
+    & > .button {
+      width: 100%;
+    }
+  }
+}

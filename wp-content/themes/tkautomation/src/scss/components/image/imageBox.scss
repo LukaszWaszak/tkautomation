@@ -1,0 +1,30 @@
+.imageBox {
+  $p: &;
+  position: relative;
+  width: 100%;
+
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    transition: filter $trM;
+  }
+
+  &--autoHeight {
+    img {
+      height: auto;
+    }
+  }
+
+  &--grayscale {
+    img {
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      img {
+        filter: none;
+      }
+    }
+  }
+}

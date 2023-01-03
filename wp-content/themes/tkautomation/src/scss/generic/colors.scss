@@ -1,0 +1,21 @@
+.color {
+  &--orange {
+    color: $c-orange-1;
+  }
+
+  &--lime {
+    color: $c-lime-1;
+  }
+
+  &--primary {
+    color: $c-prim-1;
+  }
+
+  &--azure {
+    color: $c-blue-2;
+  }
+
+  &--purple {
+    color: $c-purple-1;
+  }
+}

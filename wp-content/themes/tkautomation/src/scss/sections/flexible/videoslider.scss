@@ -1,0 +1,23 @@
+.videoSlider{
+
+
+  &__header{
+    h4{
+      color: black;
+    }
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.videoSliderBg{
+  background-color: #F4F5F9;
+  padding: 300px 50px 300px 50px;
+  position: absolute;
+  top: 10%;
+  width: 90%;
+  border-radius: 8px;
+  @include rwd('small-tablet'){
+    width: 60%;
+  }
+}

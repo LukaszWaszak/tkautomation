@@ -1,0 +1,30 @@
+.resourcesGridList {
+  $p: &;
+  position: relative;
+  padding: 4rem 0 0 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.6rem;
+    margin-top: 2rem;
+
+    @include rwd('large-phone') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rwd('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include rwd('large-tablet') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+}

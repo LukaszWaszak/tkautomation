@@ -1,0 +1,75 @@
+.linkCard {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    min-height: 304px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    background-color: $c-white;
+    border: 1px solid $c-prim-1;
+    // border: 1px solid $c-prim-1;
+    transition: 0.4s ease-in-out;
+    filter: drop-shadow(0 16px 16px $d-sh-gray);
+
+
+    @include rwd('large-laptop') {
+      padding: 4rem;
+
+      #{$p}--secondary & {
+        padding: 2rem;
+      }
+    }
+
+
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-right: 1.6rem;
+
+    @include rwd('small-tablet') {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include rwd('tablet') {
+      width: 80px;
+      height: 80px;
+    }
+
+    .imageBox {
+
+      img {
+        transition: 0.5s ease-in-out;
+
+        &.active {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__text {
+      color: $c-black;
+
+
+
+      #{$p}--secondary & {
+        font-weight: $fw-light;
+      }
+    }
+  }
+}

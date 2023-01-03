@@ -1,0 +1,114 @@
+.coursesList {
+  $p: &;
+  position: relative;
+
+  &__filters {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include rwd('large-tablet') {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    margin: -.5rem -1rem;
+
+    @include rwd('large-tablet') {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__levels {
+    @include rwd('large-tablet') {
+      justify-self: end;
+    }
+
+    @include rwd('large-laptop') {
+      width: 270px;
+    }
+  }
+
+  &__category {
+    padding: .5rem 1rem;
+    flex-shrink: 0;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 4rem 1.6rem;
+    width: 100%;
+    padding: 3rem 0 0 0;
+
+    @include rwd('small-tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include rwd('large-tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include rwd('large-laptop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    height: auto;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -1rem 0;
+
+    @include rwd('small-tablet') {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    &Button {
+      margin-right: 1.6rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__more,
+  &__nav {
+    margin: 1rem 0;
+
+    @include rwd('small-tablet') {
+      margin: 0;
+    }
+  }
+
+  &__notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 40vh;
+    font-weight: $fw-light;
+  }
+
+  &__pagination {
+    padding: 2rem 0;
+  }
+}

@@ -1,0 +1,85 @@
+.wpcf7-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.form {
+  $p: &;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__group {
+    width: 100%;
+    padding: .8rem;
+
+    &--w50 {
+      width: 100%;
+
+      @include rwd('large-tablet') {
+        width: 50%;
+      }
+    }
+
+    &--grow {
+      @include rwd('large-tablet') {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 0;
+      }
+    }
+
+    &--submit {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+
+    &--submitInline {
+      flex-wrap: wrap;
+
+      @include rwd('large-tablet') {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  &__acceptances {
+    width: 100%;
+  }
+
+  &__acceptance {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__submit {
+    #{$p}__bottom--submitInline & {
+      margin-top: 2rem;
+      margin-left: auto;
+
+      @include rwd('large-tablet') {
+        margin-top: auto;
+      }
+    }
+  }
+
+  &Input {
+    &__input {
+      border: 1px solid $c-gray-3;
+      color: $c-gray-1;
+    }
+  }
+}

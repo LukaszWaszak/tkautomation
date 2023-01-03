@@ -1,0 +1,592 @@
+{
+    "key": "group_635f757eded7b",
+    "title": "Map",
+    "fields": [
+        {
+            "key": "field_635f76c825e26",
+            "label": "Marker Icon",
+            "name": "map_marker_icon",
+            "type": "image",
+            "instructions": "Proszę określić ikonkę markera mapy",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 40,
+            "max_height": 40,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_635f758225e1f",
+            "label": "Map Points",
+            "name": "map_points",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_635fbca3d3f05",
+                    "label": "Place ID",
+                    "name": "place_id",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fc5360b601",
+                    "label": "One line summary",
+                    "name": "one_line_summary",
+                    "type": "text",
+                    "instructions": "Proszę wpisać krótki opis miejsca",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fb9f420259",
+                    "label": "Photo",
+                    "name": "photo",
+                    "type": "image",
+                    "instructions": "Proszę ustawić zdjęcie miejsca",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_635f75a625e20",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Proszę wpisać nazwę miejsca",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635f75e425e21",
+                    "label": "Address",
+                    "name": "address",
+                    "type": "text",
+                    "instructions": "Proszę podać adres",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635f75fd25e22",
+                    "label": "Contact",
+                    "name": "contact",
+                    "type": "text",
+                    "instructions": "Proszę podać dane kontaktowe",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635f765025e23",
+                    "label": "Coordinates",
+                    "name": "coordinates",
+                    "type": "group",
+                    "instructions": "Współrzędne",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_635f767125e24",
+                            "label": "Latitude",
+                            "name": "latitude",
+                            "type": "text",
+                            "instructions": "Proszę podać szerokość geograficzną",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_635f76ab25e25",
+                            "label": "Longitude",
+                            "name": "longitude",
+                            "type": "text",
+                            "instructions": "Proszę podać długość geograficzną",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_635fcfb58cc0e",
+                    "label": "Rating",
+                    "name": "rating",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fcfd38cc0f",
+                    "label": "Place URL",
+                    "name": "place_url",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_635f76c825e26",
+                                "operator": "==empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_635fca9c31fc2",
+            "label": "Map Points Hidden",
+            "name": "map_points_hidden",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_635f76c825e26",
+                        "operator": "!=empty"
+                    },
+                    {
+                        "field": "field_635f76c825e26",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_635fca9c31fc3",
+                    "label": "Place ID",
+                    "name": "place_id",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fca9c31fc4",
+                    "label": "One line summary",
+                    "name": "one_line_summary",
+                    "type": "text",
+                    "instructions": "Proszę wpisać krótki opis miejsca",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fca9c31fc5",
+                    "label": "Photo",
+                    "name": "photo",
+                    "type": "image",
+                    "instructions": "Proszę ustawić zdjęcie miejsca",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_635fca9c31fc6",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Proszę wpisać nazwę miejsca",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fca9c31fc7",
+                    "label": "Address",
+                    "name": "address",
+                    "type": "text",
+                    "instructions": "Proszę podać adres",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fca9c31fc8",
+                    "label": "Contact",
+                    "name": "contact",
+                    "type": "text",
+                    "instructions": "Proszę podać dane kontaktowe",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fca9c31fc9",
+                    "label": "Coordinates",
+                    "name": "coordinates",
+                    "type": "group",
+                    "instructions": "Współrzędne",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_635fca9c31fca",
+                            "label": "Latitude",
+                            "name": "latitude",
+                            "type": "text",
+                            "instructions": "Proszę podać szerokość geograficzną",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_635fca9c31fcb",
+                            "label": "Longitude",
+                            "name": "longitude",
+                            "type": "text",
+                            "instructions": "Proszę podać długość geograficzną",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_635fcff739b22",
+                    "label": "Rating",
+                    "name": "rating",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_635fcffe39b23",
+                    "label": "Place URL",
+                    "name": "place_url",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "map-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1667223581
+}

@@ -1,0 +1,63 @@
+.DataPerson{
+
+  &__header{
+    text-align: center;
+  }
+
+  &__tiles{
+    @include rwd('large-tablet') {
+      grid-template-columns: repeat(4,1fr);
+    }
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+
+    @include rwd('small-tablet', false ) {
+      grid-template-columns: 1fr;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -3rem;
+      bottom: 3rem;
+      width: 100px;
+      height: 75px;
+      background-image: url('../images/pattern_cross.svg');
+      top: 67%;
+      left: 4%;
+
+      @include rwd('large-tablet') {
+        top: 68%;
+        left: 7.2%;
+      }
+      @include rwd('ultra'){
+        left: 3%;
+      
+    }
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 120px;
+      height: 120px;
+      background-image: url('../images/pattern_cross.svg');
+      top: 4rem;
+      right: 2rem; 
+        @include rwd('large-tablet'){
+          top: 36%;
+          right: 7%;
+        
+      }
+        @include rwd('ultra'){
+            top: 36%;
+            right: 2.5%;
+          
+        }
+    }
+
+    }
+  }

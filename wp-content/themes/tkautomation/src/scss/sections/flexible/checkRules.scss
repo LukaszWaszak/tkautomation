@@ -1,0 +1,32 @@
+.checkRules{
+  display: flex;
+  flex-direction: column;
+
+
+
+  &__wrapper{
+
+  }
+
+  &__header{
+    text-align: center;
+    h5{
+      color:#6D40FE;
+    }
+  }
+
+  &__cards{
+    display: grid;
+    padding-top: 20px;
+@include rwd('large-tablet'){
+  padding-top: 40px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+  }
+
+  &__card{
+      box-shadow: 4px 11px 10px 6px rgb(0 0 0 / 6%);
+      border-radius: 8px;
+  }
+}

@@ -1,0 +1,44 @@
+.videoMentions {
+  $p: &;
+  position: relative;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__mentions{
+    position: relative;
+    margin-right: -1.6rem;
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--prev {
+      left: -2rem;
+    }
+
+    &--next {
+      right: -.4rem;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include rwd('small-tablet') {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-right: 1.6rem;
+    }
+
+    @include rwd('large-tablet') {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+  }
+}

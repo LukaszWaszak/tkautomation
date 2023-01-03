@@ -1,0 +1,168 @@
+.section {
+  $p: &;
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0;
+  overflow: hidden;
+
+  &[data-bg-to-footer] {
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: $c-gray-4;
+      transition: height $trM;
+      height: var(--after);
+    }
+  }
+
+  @include rwd('large-tablet') {
+    padding: 8rem 0;
+  }
+
+  &--headerPadding {
+    padding: 0;
+    height: 115px;
+    border: none;
+    outline: none;
+
+    @include rwd('large-tablet') {
+      height: 137px;
+    }
+  }
+
+  /* padding settings begin */
+
+  &--padding-none {
+    padding: 0;
+  }
+
+  &--padding-small {
+    padding: 4rem 0;
+  }
+
+  &--padding-smallTop {
+    padding-top: 4rem;
+  }
+
+  &--padding-smallBottom {
+    padding-bottom: 4rem;
+  }
+
+  &--padding-bigTop {
+    @include rwd('large-tablet') {
+      padding-top: 16rem;
+    }
+  }
+
+  &--padding-largeTop {
+    padding-top: 15rem;
+
+    @include rwd('large-tablet') {
+      padding-top: 23rem;
+    }
+  }
+
+  &--padding-bigVertical {
+    @include rwd('large-tablet') {
+      padding: 13rem 0;
+    }
+  }
+
+  &--padding-largeVertical {
+    @include rwd('large-tablet') {
+      padding: 23rem 0;
+    }
+  }
+
+  &--padding-topNone {
+    padding-top: 0;
+  }
+
+  &--padding-bottomNone {
+    @include rwd('large-tablet') {
+      padding-bottom: 0;
+    }
+  }
+
+  /* padding settings end */
+
+  &--parallax {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    &::after {
+      background-color: $c-blue-1;
+      opacity: .10;
+      mix-blend-mode: color;
+    }
+
+    &::before {
+      background-color: $c-black;
+      opacity: .15;
+      mix-blend-mode: normal;
+    }
+  }
+
+  &__tag {
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+  }
+
+  &__more {
+    margin-top: 2rem;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+
+    &--gridRepeat {
+      top: 8rem;
+      left: 0;
+      width: 100%;
+
+      #{$p}--padding-bigTop & {
+        top: 15rem;
+      }
+
+      #{$p}.newsroom {
+        top: 15%;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__container {
+    padding: 8rem 0;
+
+    &--padding-none {
+      padding: 0;
+    }
+
+    &--padding-bigVertical {
+      @include rwd('large-tablet') {
+        padding: 15rem 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.articleRating {
+  $p: &;
+  position: relative;
+
+  &__rate {
+    display: flex;
+    align-items: center;
+    margin: -.8rem;
+    margin-top: -0.3rem;
+
+    &:hover{
+      #{$p}__star {
+        svg {
+          stroke: $c-prim-1;
+          fill: $c-prim-1;
+        }
+      }
+    }
+
+    &:hover {
+      #{$p}__star:hover ~ #{$p}__star {
+        svg {
+          fill: $c-white;
+        }
+      }
+    }
+  }
+
+  &__star {
+    cursor: pointer;
+    padding: .8rem;
+
+    svg {
+      transition: stroke $trM, fill $trM;
+    }
+
+    &.active {
+      svg {
+        stroke: $c-prim-1;
+        fill: $c-prim-1;
+      }
+    }
+  }
+}

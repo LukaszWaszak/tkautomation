@@ -1,0 +1,19 @@
+.descTile{
+  &__wrapper{
+    @include rwd('large-tablet') {
+      padding: 0px 60px;
+    }
+  }
+
+  &__tiles {
+    display: grid;
+    gap: 40px;
+    padding-top: 40px;
+
+    @include rwd('large-tablet') {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+}
+
+

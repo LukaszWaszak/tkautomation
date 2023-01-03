@@ -1,0 +1,173 @@
+{
+    "key": "group_6321bfd396e93",
+    "title": "Newsletter",
+    "fields": [
+        {
+            "key": "field_6321bfe67ee18",
+            "label": "Newsletter",
+            "name": "newsletter",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6321bff37ee19",
+                    "label": "API Key",
+                    "name": "api_key",
+                    "type": "text",
+                    "instructions": "Proszę podać klucz API newslettera",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6321c0107ee1a",
+                    "label": "Form",
+                    "name": "form",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6321c0357ee1b",
+                            "label": "Before Header",
+                            "name": "before_header",
+                            "type": "text",
+                            "instructions": "Proszę podać treść nagłówka który pojawi się przed wysłaniem formularza",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6321c09b7ee1c",
+                            "label": "Before Text",
+                            "name": "before_text",
+                            "type": "text",
+                            "instructions": "Proszę podać treść tekstu który pojawi się przed wysłaniem formularza",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6321c0b67ee1d",
+                            "label": "After Header",
+                            "name": "after_header",
+                            "type": "text",
+                            "instructions": "Proszę podać treść nagłówka który pojawi się po wysłaniu formularza",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6321c0f47ee1e",
+                            "label": "After Text",
+                            "name": "after_text",
+                            "type": "text",
+                            "instructions": "Proszę podać treść tesktu który pojawi się po wysłaniu formularza",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6321c11a7ee1f",
+                            "label": "Submit",
+                            "name": "submit",
+                            "type": "text",
+                            "instructions": "Proszę podać treść przycisku zatwierdzającego formularz",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "newsletter"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1663156573
+}

@@ -1,0 +1,42 @@
+.businessReviewsSlider {
+  $p: &;
+  position: relative;
+
+  &__slide {
+    height: auto;
+    transform: scale(.85);
+    transition: transform $trM;
+
+    &.swiper-slide-active {
+      transform: scale(1);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    z-index: 2;
+    bottom: -3.2rem;
+    transform: translateY(-50%);
+
+    &--prev {
+      right: 4rem;
+    }
+
+    &--next {
+      right: 0rem;
+    }
+
+    @include rwd('tablet') {
+      top: 50%;
+      bottom: unset;
+
+      &--prev {
+        left: -2rem;
+      }
+
+      &--next {
+        right: -2rem;
+      }
+    }
+  }
+}

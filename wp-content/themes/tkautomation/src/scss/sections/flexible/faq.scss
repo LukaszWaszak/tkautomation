@@ -1,0 +1,42 @@
+.faq {
+  $p: &;
+  position: relative;
+  overflow: unset;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $c-gray-4;
+    transition: height $trM;
+  }
+
+  &__header {
+    text-align: center;
+    margin: 0 auto;
+
+    @include rwd('large-tablet') {
+      width: 50%;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    @include rwd('large-tablet') {
+      width: gridPart(8, 7, 0);
+    }
+  }
+
+  &__more {
+    margin-top: 2rem;
+    margin-left: auto;
+    color: $c-black;
+  }
+}

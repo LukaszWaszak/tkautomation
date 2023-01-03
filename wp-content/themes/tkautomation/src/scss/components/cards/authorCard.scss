@@ -1,0 +1,24 @@
+.authorCard {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    margin-right: 1.6rem;
+    border-radius: 50%;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &__name {
+    color: $c-black;
+  }
+}

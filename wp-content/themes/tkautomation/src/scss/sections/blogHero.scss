@@ -1,0 +1,71 @@
+.blogHero {
+  $p: &;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__header {
+    width: gridPart(12, 11, 0);
+
+    @include rwd('tablet') {
+      width: gridPart(5, 4, 0);
+    }
+
+    .text {
+      &__subtitle,
+      &__text {
+        font-weight: $fw-light;
+      }
+
+      &__text {
+        color: $c-black;
+      }
+    }
+  }
+
+  &__form {
+    width: gridPart(12, 11, 0);
+    margin-top: 3rem;
+
+    @include rwd('small-tablet') {
+      width: gridPart(10, 9, 0);
+    }
+
+    @include rwd('tablet') {
+      width: gridPart(5, 5, 0);
+      margin-left: gridPart(2, 2, 0);
+      margin-top: 0;
+    }
+
+    &Wrapper {
+      padding: 2rem 3rem;
+      border-radius: 1.6rem;
+      background-color: $c-purple-1;
+      color: $c-white;
+
+      @include rwd('tablet') {
+        padding: 2rem 4rem;
+      }
+
+      @include rwd('large-tablet') {
+        padding: 4rem 7rem;
+      }
+
+      .wpcf7-list-item-label {
+        color: $c-white;
+      }
+    }
+
+    &Header {
+      margin-bottom: 1rem;
+    }
+
+    &Inner {
+      margin: -.8rem;
+    }
+  }
+}

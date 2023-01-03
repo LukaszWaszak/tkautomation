@@ -1,0 +1,49 @@
+.logosSlider {
+  $p: &;
+  position: relative;
+  background-color: rgba($c-gray-4, .3);
+
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+
+    @include rwd('small-tablet') {
+      width: 80%;
+    }
+
+    @include rwd('large-tablet') {
+      width: 50%;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 0 2rem;
+
+    @include rwd('tablet') {
+      padding: 0 5rem;
+    }
+
+    &Wrapper {
+      align-items: center;
+    }
+
+    &Slide {
+      padding: 0 5rem;
+    }
+
+    &Logo {
+      margin: 0 auto;
+
+      img {
+        filter: grayscale(1);
+        transition: filter $trM;
+
+        #{$p}__sliderSlide:hover & {
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+}

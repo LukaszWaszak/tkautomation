@@ -1,0 +1,168 @@
+.timeImageSlider {
+  $p: &;
+  position: relative;
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+
+    &Item {
+      position: relative;
+      padding: .5rem;
+      flex: 1 0 auto;
+      cursor: pointer;
+
+      &Name {
+        position: relative;
+        display: inline-block;
+        font-weight: $fw-light;
+
+        #{$p}__navItem.active & {
+          color: $c-purple-1;
+        }
+      }
+
+      &Progress {
+        width: 0;
+        height: 2px;
+        background-color: $c-purple-1;
+        transition: width $tr;
+
+        #{$p}__navItem.active & {
+          animation-name: progress;
+          animation-timing-function: linear;
+          animation-duration: calc(var(--interval) * 1s);
+        }
+
+        #{$p}__navItem.pause & {
+          animation-play-state: paused;
+        }
+
+        @keyframes progress {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+    left: -5rem;
+    margin: -5rem -5rem 0 0;
+
+    &Container {
+      margin-right: -5rem;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem;
+    padding-bottom: 0;
+
+    @include rwd('tablet') {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    order: 2;
+
+    @include rwd('tablet') {
+      width: gridPart(6, 5, 0);
+      margin-right: gridPart(1, 2, 0);
+      order: unset;
+    }
+  }
+
+  &__more {
+    margin-top: 2rem;
+  }
+
+  &__image {
+    order: 1;
+    position: relative;
+    width: gridPart(10, 9, 0);
+    padding-top: 60%;
+    margin-bottom: 5rem;
+
+    @include rwd('small-tablet') {
+      width: gridPart(8, 7, 0);
+      padding-top: 50%;
+    }
+
+    @include rwd('tablet') {
+      order: unset;
+      margin-bottom: unset;
+      width: gridPart(5, 4, 0);
+      padding-top: 30%;
+    }
+
+    &Wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transition: transform $tr;
+    }
+
+    &::before {
+      border-radius: 50%;
+      top: 5rem;
+      left: -50px;
+      width: 80px;
+      height: 80px;
+      background-color: $c-prim-2;
+
+      @include rwd('large-tablet') {
+        width: 130px;
+        height: 130px;
+      }
+    }
+
+    &::after {
+      z-index: 2;
+      right: -45px;
+      bottom: -35px;
+      width: 60px;
+      height: 60px;
+      background-image: url('../images/elipse_quarter_purple_2.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include rwd('large-tablet') {
+        top: unset;
+        width: 95px;
+        height: 95px;
+      }
+    }
+
+    &:hover {
+      &::after {
+        transform: scale(1.03);
+      }
+
+      &::before {
+        transform: rotate(45deg) scale(1.02);
+      }
+    }
+  }
+}

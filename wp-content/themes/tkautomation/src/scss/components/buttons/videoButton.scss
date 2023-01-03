@@ -1,0 +1,33 @@
+.videoButton {
+  $p: &;
+  position: relative;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $c-white;
+  transition: background-color $trM;
+
+  @include rwd('large-tablet') {
+    &:hover {
+      background-color: $c-purple-1;
+    }
+  }
+
+  &__icon {
+    font-size: 1.6rem;
+    transition: color $trM;
+
+    #{$p}--default & {
+      color: $c-purple-1;
+    }
+
+    @include rwd('large-tablet') {
+      #{$p}:hover & {
+        color: $c-white;
+      }
+    }
+  }
+}

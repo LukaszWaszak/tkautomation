@@ -1,0 +1,87 @@
+.socialMediaPosts {
+  $p: &;
+  position: relative;
+  overflow: unset;
+
+  &__header {
+    @include rwd('laptop') {
+      width: 55%;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -.8rem;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    margin: -.8rem;
+    padding: .8rem;
+  }
+
+  &__social {
+    padding: .8rem;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -.8rem;
+    padding: .8rem;
+
+    &Button {
+      padding: .8rem;
+    }
+  }
+
+  &__posts {
+    margin-top: 3rem;
+  }
+
+  &__slider {
+    margin: -2rem;
+
+    @include rwd('large-tablet') {
+      margin-right: gridPart(0, 0, -0.75, gridBase(12, 11, 0));
+    }
+
+    @include rwd('ultra') {
+      margin-right: gridPart(0, 0, -1, gridBase(12, 11, 0));
+    }
+
+    &Container {
+
+    }
+
+    &Wrapper {
+      padding: 2rem;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 90%;
+    max-width: 90%;
+    height: auto;
+    margin-right: 1.6rem;
+
+    @include rwd('phone') {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+
+    @include rwd('small-tablet') {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+
+    @include rwd('large-tablet') {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+  }
+}

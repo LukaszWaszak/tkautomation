@@ -1,0 +1,95 @@
+.stepForm {
+  $p: &;
+  position: relative;
+
+  &__header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    @include rwd('small-tablet') {
+      width: gridPart(9, 8, 0);
+    }
+
+    @include rwd('tablet') {
+      width: gridPart(6, 6, 0);
+    }
+
+    .text {
+      &__text {
+        font-weight: $fw-light;
+      }
+    }
+  }
+
+  &__steps {
+    margin-top: 4rem;
+  }
+
+  &__questions {
+    margin-top: 4rem;
+
+    &Text {
+      color: $c-black;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include rwd('tablet') {
+      flex-direction: row;
+    }
+  }
+
+  &__option {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    padding: .8rem 0;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include rwd('tablet') {
+      padding: 0 1.6rem 0 0;
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+
+    &Inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100px;
+      border-radius: .8rem;
+      background-color: $c-white;
+      box-shadow: $b-sh-gray-weak;
+      cursor: pointer;
+      transition: background-color $trM, color $tr;
+
+      &:hover {
+        background-color: $c-prim-1;
+        color: $c-white;
+      }
+    }
+  }
+
+  &__outro {
+    margin-top: 4rem;
+    color: $c-black;
+    padding: 0 3rem;
+
+    @include rwd('large-tablet') {
+      padding: 0;
+    }
+  }
+}
